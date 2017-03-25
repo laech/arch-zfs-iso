@@ -1,0 +1,17 @@
+# Place this in /etc/pacman.d/hooks/dkms.hook
+# Ensure DKMS modules are installed.
+# This is important for ZFS as spl-dkms needs to be installed before zfs-dkms,
+# but sometimes (e.g. after kernel upgrade) DKMS tries to install zfs-dkms
+# before installing spl-dkms, causing zfs-dkms to fail making the system
+# unbootable, running 'dkms autoinstall' fixes this
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = dkms autoinstall
+When = PostTransaction
+Exec = /usr/bin/dkms autoinstall
