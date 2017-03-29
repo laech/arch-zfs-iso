@@ -10,6 +10,8 @@
 Operation = Install
 Operation = Upgrade
 Type = File
+Target = usr/src/sql-*/dkms.conf
+Target = usr/src/zfs-*/dkms.conf
 Target = usr/lib/modules/*/kernel/
 
 [Action]
