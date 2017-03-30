@@ -57,3 +57,6 @@ EOF
 rm -rf "${archdir}/out"
 mkdir "${archdir}/out"
 (cd "${archdir}" && sudo ./build.sh -v) || exit 1
+
+mv "${archdir}/out/*" "${workdir}"
+sudo rm -rf "${archdir}"
