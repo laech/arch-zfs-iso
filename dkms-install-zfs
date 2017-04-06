@@ -16,6 +16,8 @@ install_module() {
 }
 
 for kernel in $(ls /usr/lib/modules); do
-    install_module spl "${kernel}"
-    install_module zfs "${kernel}"
+    if [[ -d "/usr/lib/modules/${kernel}/kernel" ]]; then
+	install_module spl "${kernel}"
+	install_module zfs "${kernel}"
+    fi
 done
