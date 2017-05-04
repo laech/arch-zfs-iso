@@ -1,4 +1,7 @@
 archlive
 tmp
+target
 *~
 *.iso
+*.iml
+.idea
