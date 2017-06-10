@@ -56,7 +56,11 @@ EOF
 
 rm -rf "${archdir}/out"
 mkdir "${archdir}/out"
-(cd "${archdir}" && sudo ./build.sh -v) || exit 1
+
+(cd "${archdir}" && sudo ./build.sh -v)
+
+# Ensure ZFS is installed.
+ls "${archdir}"/work/x86_64/airootfs/usr/lib/modules/*/extra/zfs > /dev/null
 
 mv "${archdir}"/out/* "${workdir}"
 sudo rm -rf "${archdir}"
