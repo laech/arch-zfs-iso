@@ -25,13 +25,13 @@ build_zfs() {
     rm -rf "${tmpdir}"
     mkdir "${tmpdir}"
 
-    # Version 0.6.5.10
-    wget -nv -O "${tmpdir}/zfs-dkms.tar.gz" "${baseurl}/aur-324493c213ad5046ec9165f59e6238c4629fa12a.tar.gz"
-    wget -nv -O "${tmpdir}/spl-dkms.tar.gz" "${baseurl}/aur-d6f7e2bf33121ac88b60bf960556ee1c808064fa.tar.gz"
+    # Version 0.7.3
+    wget -nv -O "${tmpdir}/zfs-dkms.tar.gz" "${baseurl}/aur-c0d6f62c9269342f30d87cbfcf5d0a0404eb2f5d.tar.gz"
+    wget -nv -O "${tmpdir}/spl-dkms.tar.gz" "${baseurl}/aur-6e69af7e0c638035d242b8a6cf24976a0ceec004.tar.gz"
 
     sha512sum -c <<EOF
-55ccc7d587dce254b69155cef152e58599289ae12f93017a845768d88e886b79f6df85e06fbc07bc427dd39674a64bba6966dc1778c4c48d3bb5161273c18116  ${tmpdir}/spl-dkms.tar.gz
-7ace23e00a925f8f5fac1a9ea426398ea5f248829ef247488ed4c4b8fb123ba2494997aabd2cd76bf7d5b8378f71b659a245a77623b764bd40d2506f08eb9caf  ${tmpdir}/zfs-dkms.tar.gz
+08064d19c52085f28df5d25718f88fa2c34a23a68bf7f5b7fb59069492e34abd5739977798167b95945236c346b8172c161b16953663eccf1cb9fb5926c81a83  ${tmpdir}/spl-dkms.tar.gz
+09d05ab217555ca78461e9070b1a35c166d0975f27ef842a20b35ca384f311bc7c1c2137a5a88e3a2fa4721b6406b9b2c92fced9ccb90584cded61bc5c267b3b  ${tmpdir}/zfs-dkms.tar.gz
 EOF
 
     mkdir "${tmpdir}/spl-dkms" && tar -xzvf "${tmpdir}/spl-dkms.tar.gz" -C "${tmpdir}/spl-dkms" --strip-component 1
