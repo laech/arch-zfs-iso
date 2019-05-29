@@ -1,0 +1,4 @@
+[submodule "test"]
+	path = test
+	url = git@gitlab.com:lae/arch-zfs-iso-test.git
+	branch = master
