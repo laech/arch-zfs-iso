@@ -1,2 +1,5 @@
-Builds a Arch Linux live image with ZFS support.
+Builds an Arch Linux live image with ZFS.
 Script needs to be executed under Arch.
+
+Run `./build-archiso.sh`.
+Or `use_dkms=1 ./build-archiso.sh` to use DKMS build of ZFS.
