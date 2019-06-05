@@ -7,7 +7,7 @@ set -o xtrace
 
 readonly use_dkms=${use_dkms:-0}
 
-readonly workdir="$(dirname $0)"
+readonly workdir="$(dirname "$0")"
 readonly archdir="${workdir}/archlive"
 
 pacman -Qs archiso > /dev/null || {
