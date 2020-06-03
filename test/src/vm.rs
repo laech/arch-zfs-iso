@@ -173,7 +173,7 @@ fn vboxmanage_createvm(vm: &str) -> io::Result<()> {
 fn vboxmanage_modifyvm_memory(vm: &str) -> io::Result<()> {
     vboxmanage()
         .args(&["modifyvm", vm])
-        .args(&["--memory", "512"])
+        .args(&["--memory", "1024"])
         .run()
 }
 
