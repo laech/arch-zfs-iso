@@ -141,7 +141,7 @@ fn gen_ssh_keypair(private_key: impl AsRef<Path>, public_key: impl AsRef<Path>) 
 }
 
 fn wait_for_started(vm: &str) -> io::Result<()> {
-    for i in 0..30 {
+    for i in 0..8 {
         log::info!("Booting ({})...", i);
 
         let ok = vboxmanage()
